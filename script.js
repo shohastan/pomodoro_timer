@@ -67,7 +67,7 @@ function countdown(count) {
     };
 
     if (count > 0) {
-        timer = setTimeout(() => countdown(count - 1), 1000);
+        timer = setTimeout(() => countdown(count - 1), 1);
     } else {
         startTimer();
     }
