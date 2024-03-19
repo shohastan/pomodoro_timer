@@ -14,7 +14,8 @@ function resetTimer() {
     reps = 0;
     document.getElementById("timerLabel").textContent = "Timer";
     document.getElementById("timerLabel").style.color = GREEN;
-    document.getElementById("timerCanvas").getContext("2d").clearRect(0, 0, 200, 224);
+    const ctx = document.getElementById("timerCanvas").getContext("2d");
+    ctx.clearRect(0, 0, 200, 224); // Clear the canvas
     document.getElementById("checkmarkLabel").textContent = "";
 }
 
@@ -38,19 +39,17 @@ function startTimer() {
 
 function countdown(count) {
     const minutes = Math.floor(count / 60);
-    let seconds = count % 60;
-    if (seconds < 10) {
-        seconds = `0${seconds}`;
-    }
-    const ctx = document.getElementById("timerCanvas").getContext("2d");
-    ctx.clearRect(0, 0, 200, 224); // Clear the canvas
-    ctx.fillText(`${minutes}:${seconds}`, 100, 112); // Draw the updated time
+    const seconds = count % 60;
+    const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 
-    // Load the tomato image
+    const ctx = document.getElementById("timerCanvas").getContext("2d");
     const image = new Image();
     image.src = "tomato.png";
     image.onload = () => {
-        ctx.drawImage(image, 100, 112); // Draw the tomato image
+        ctx.drawImage(image, 0, 0, 200, 224); // Draw the tomato image
+        ctx.fillStyle = "white";
+        ctx.font = "bold 35px Courier";
+        ctx.fillText(formattedTime, 100, 112); // Draw the updated time
     };
 
     if (count > 0) {
@@ -72,8 +71,6 @@ function updateTimerLabel(text, color) {
 }
 
 // Add event listeners for buttons (startButton and resetButton)
-
-// Example:
 document.getElementById("startButton").addEventListener("click", () => {
     startTimer();
 });
