@@ -38,12 +38,20 @@ function startTimer() {
 
 function countdown(count) {
     const minutes = Math.floor(count / 60);
-    const seconds = count % 60;
-    const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-
+    let seconds = count % 60;
+    if (seconds < 10) {
+        seconds = `0${seconds}`;
+    }
     const ctx = document.getElementById("timerCanvas").getContext("2d");
     ctx.clearRect(0, 0, 200, 224); // Clear the canvas
-    ctx.fillText(formattedTime, 100, 112); // Draw the updated time
+    ctx.fillText(`${minutes}:${seconds}`, 100, 112); // Draw the updated time
+
+    // Load the tomato image
+    const image = new Image();
+    image.src = "tomato.png";
+    image.onload = () => {
+        ctx.drawImage(image, 100, 112); // Draw the tomato image
+    };
 
     if (count > 0) {
         timer = setTimeout(() => countdown(count - 1), 1);
