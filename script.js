@@ -57,21 +57,21 @@ function countdown(count) {
         ctx.textAlign = "center"; // Center the text horizontally
         ctx.textBaseline = "middle"; // Center the text vertically
         ctx.fillText(formattedTime, textX, textY); // Draw the updated time
+
+        // Draw green checkmarks
+        ctx.fillStyle = GREEN;
+        const workSession = Math.floor(reps / 2);
+        for (let i = 0; i < workSession; i++) {
+            ctx.fillText("✔", textX + i * 20, textY + 40); // Adjust position as needed
+        }
     };
 
     if (count > 0) {
         timer = setTimeout(() => countdown(count - 1), 1000);
     } else {
         startTimer();
-        let mark = "";
-        const workSession = Math.floor(reps / 2);
-        for (let i = 0; i < workSession; i++) {
-            mark += "✔";
-        }
-        document.getElementById("checkmarkLabel").textContent = mark;
     }
 }
-
 
 function updateTimerLabel(text, color) {
     document.getElementById("timerLabel").textContent = text;
@@ -79,6 +79,8 @@ function updateTimerLabel(text, color) {
 }
 
 // Add event listeners for buttons (startButton and resetButton)
+
+// Example:
 document.getElementById("startButton").addEventListener("click", () => {
     startTimer();
 });
