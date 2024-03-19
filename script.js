@@ -46,7 +46,7 @@ function countdown(count) {
     ctx.fillText(formattedTime, 100, 112); // Draw the updated time
 
     if (count > 0) {
-        timer = setTimeout(() => countdown(count - 1), 1000);
+        timer = setTimeout(() => countdown(count - 1), 1);
     } else {
         startTimer();
         let mark = "";
