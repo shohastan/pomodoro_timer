@@ -1,5 +1,5 @@
 # Pomodoro TimerBoost Productivity with the Pomodoro Technique
-The Pomodoro Technique is a time management method that helps you stay focused, maintain productivity, and avoid burnout. Here’s how it works:
+The Pomodoro Technique is a time management method that helps you stay focused, maintain productivity, and avoid burnout.
 
 Work Intervals: Break your work into short, focused intervals (usually 25 minutes each). These intervals are called “Pomodoros.” During a Pomodoro, you concentrate solely on the task at hand.
 Set a Timer: Use a timer (like the one we’ve created!) to track your Pomodoro. When the timer starts, immerse yourself in work without distractions. No checking emails, social media, or other unrelated tasks.
