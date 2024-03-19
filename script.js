@@ -47,13 +47,20 @@ function countdown(count) {
     image.src = "tomato.png";
     image.onload = () => {
         ctx.drawImage(image, 0, 0, 200, 224); // Draw the tomato image
+
+        // Calculate the position to center the timer text
+        const textX = 100; // X-coordinate (center horizontally)
+        const textY = 112; // Y-coordinate (center vertically)
+
         ctx.fillStyle = "white";
         ctx.font = "bold 35px Courier";
-        ctx.fillText(formattedTime, 100, 112); // Draw the updated time
+        ctx.textAlign = "center"; // Center the text horizontally
+        ctx.textBaseline = "middle"; // Center the text vertically
+        ctx.fillText(formattedTime, textX, textY); // Draw the updated time
     };
 
     if (count > 0) {
-        timer = setTimeout(() => countdown(count - 1), 1);
+        timer = setTimeout(() => countdown(count - 1), 1000);
     } else {
         startTimer();
         let mark = "";
@@ -64,6 +71,7 @@ function countdown(count) {
         document.getElementById("checkmarkLabel").textContent = mark;
     }
 }
+
 
 function updateTimerLabel(text, color) {
     document.getElementById("timerLabel").textContent = text;
