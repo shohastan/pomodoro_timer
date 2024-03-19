@@ -21,5 +21,5 @@ The timer keeps you accountable. Knowing you have only 25 minutes encourages eff
 ## Task Completion
 Completing Pomodoros gives a sense of accomplishment. You’ll see progress and feel motivated.
 
-
+</br></br></br>
 Remember, productivity isn’t about working longer—it’s about working smarter. Give the Pomodoro Technique a try, and watch your work load get smaller and smaller! 🍅⏲️
