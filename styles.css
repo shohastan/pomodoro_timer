@@ -1,4 +1,35 @@
 body {
+  background-color: #f5f5dc;
   background-image: url("tomato.svg");
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* Add this line */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+#timerDiv {
+  text-align: center;
+}
+
+#timerCanvas {
+  width: 50vmin;
+  height: 56vmin;
+}
+
+@media (max-width: 600px) {
+  body {
+      font-size: 12px;
+  }
+
+  #timerCanvas {
+      width: 70vmin;
+      height: 78vmin;
+  }
 }
