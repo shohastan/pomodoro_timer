@@ -68,19 +68,24 @@ function countdown(count) {
     ctx.textBaseline = "middle"; // Add this line
     ctx.fillText(formattedTime, canvas.width / 2, canvas.height / 2); // Update this line
 
+
     if (count > 0) {
         timer = setTimeout(() => countdown(count - 1), 1);
     } else {
         startTimer();
+
         let mark = "";
         const workSession = Math.floor(reps / 2);
         for (let i = 0; i < workSession; i++) {
             mark += "✔";
         }
         updateCheckmarkLabel(mark);
+
     }
 }
 
 // Add event listeners for buttons (startButton and resetButton)
+
 getElement("startButton").addEventListener("click", startTimer);
 getElement("resetButton").addEventListener("click", resetTimer);
+
